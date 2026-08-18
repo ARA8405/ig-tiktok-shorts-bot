@@ -1,0 +1,11 @@
+services:
+  ig-tiktok-bot:
+    build: .
+    container_name: ig-tiktok-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./downloads:/app/downloads
+      # Uncomment and set COOKIES_FILE=/app/cookies.txt in .env if you use one
+      # - ./cookies.txt:/app/cookies.txt:ro
