@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  macOS launchd service definition so the bot auto-starts on login/boot
+  and auto-restarts if it crashes. See README.md "Run 24/7 on your Mac".
+
+  Before using: replace both /Users/YOURNAME/ig-tiktok-bot paths below
+  with the real absolute path to this project folder on your Mac.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.igtiktokbot</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/YOURNAME/ig-tiktok-bot/venv/bin/python</string>
+        <string>/Users/YOURNAME/ig-tiktok-bot/bot.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/YOURNAME/ig-tiktok-bot</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/YOURNAME/ig-tiktok-bot/bot.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/YOURNAME/ig-tiktok-bot/bot.error.log</string>
+</dict>
+</plist>

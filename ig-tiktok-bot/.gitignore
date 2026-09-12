@@ -1,0 +1,14 @@
+# Secrets — never commit your real bot token or cookies
+.env
+cookies.txt
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Runtime data
+downloads/
+*.log
+bot.log
+bot.error.log
